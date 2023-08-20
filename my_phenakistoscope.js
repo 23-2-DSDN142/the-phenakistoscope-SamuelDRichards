@@ -18,15 +18,15 @@ function setup_layers(pScope){
   
      var layer1 = new PLayer(frogTest);
      layer1.mode(RING)
-     layer1.set_boundary( 4000, 4000 )
+     layer1.set_boundary( 10, 10 )
   
  }
 
 
 
 function frogTest( x, y, animation, pScope) {
-  scale(.12)
-  pScope.draw_image_from_sequence("frogTest", 0, -7000, animation.frame)
+  scale(.1558)
+  pScope.draw_image_from_sequence("frogTest", 0, -4000, animation.frame)
   
 }
 

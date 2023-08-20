@@ -1,4 +1,4 @@
-const SLICE_COUNT = 10;
+const SLICE_COUNT = 12;
 
 function setup_pScope(pScope){
   pScope.output_mode(ANIMATED_DISK);
@@ -6,7 +6,7 @@ function setup_pScope(pScope){
   pScope.draw_layer_boundaries(true);
   pScope.set_direction(CCW);
   pScope.set_slice_count(SLICE_COUNT);
-  pScope.load_image_sequence("frogTest" , "png", 10)
+  pScope.load_image_sequence("frogTest" , "png", 12)
 }
 
 
@@ -25,8 +25,13 @@ function setup_layers(pScope){
 
 
 function frogTest( x, y, animation, pScope) {
-  scale(.1)
+  scale(.12)
   pScope.draw_image_from_sequence("frogTest", 0, -7000, animation.frame)
+  
+}
+
+
+function block(x, y, animation, pScope) {
   
 }
 

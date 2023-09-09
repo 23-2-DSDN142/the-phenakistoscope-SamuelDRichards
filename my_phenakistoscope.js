@@ -50,26 +50,13 @@ function frogTest( x, y, animation, pScope) {
 
 function lilypad( x, y, animation, pScope) {
 
-  // scale(1.25)
-  
-  // strokeWeight(8);
-  // stroke(6, 46, 0) //dark green for edge of lily pad
+
+  scale(1.8)
+   strokeWeight(5);
+   stroke(6, 46, 0) //dark green for edge of lily pad
    fill(10,77,1) //green
-  // arc(x,y, 400, 400, 0, 360)
+  
 
-   //strokeWeight(0);
-  // fill(179,85,133) //background pink
-  // triangle(80, 80, 160, 130, 130, 160 )
-
-  // fill(6, 46, 0) //dark green 
-  // strokeWeight(4)
-  // line(10, 20, 90, 30)
-  // line(10, 20, 0, 150)
-  // line(10, 20, 130, -50)
-  // line(10, 20, -140, -110)
-  // line(10, 20, -130, 30)
-  // line(10, 20, -5, -180)
-  // circle(10, 20, 20)
   if(animation.frame == 0){
   beginShape();
   curveVertex(10, -120);
@@ -80,13 +67,24 @@ function lilypad( x, y, animation, pScope) {
   curveVertex(140, 30);
   curveVertex(100, 100);
   curveVertex(60, 180);
-  curveVertex(-160, 180);
   curveVertex(-100, 100);
-  curveVertex(-80, -90);
   curveVertex(-100, -100);
-
   endShape(CLOSE);
+
+
+  fill(6, 46, 0) //dark green 
+  strokeWeight(4)
+
+  line(10, 20, 90, 30) //lilypad lines
+  line(10, 20, 0, 150)
+  line(10, 20, 90, -90)
+  line(10, 20, -70, -40)
+  line(10, 20, -100, 30)
+  line(10, 20, -5, -100)
+  circle(10, 20, 10)
   }
+
+  
 }
 
 

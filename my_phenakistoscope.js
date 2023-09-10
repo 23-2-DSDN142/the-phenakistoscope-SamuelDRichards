@@ -11,6 +11,8 @@ function setup_pScope(pScope){
   pScope.set_slice_count(SLICE_COUNT);
   pScope.load_image_sequence("frogTest" , "png", 14)
   pScope.load_image("flower" , "png");
+  pScope.load_image("reed_1" , "png");
+  pScope.load_image("reed_2" , "png");
   angleMode(DEGREES);
 }
 
@@ -28,15 +30,26 @@ function setup_layers(pScope){
 
     
     
+     var layer4 = new PLayer(water);
+     layer4.mode(RING)
+     layer4.set_boundary( 0, 370 )
+
+     var layer4 = new PLayer(reeds);
+     layer4.mode(RING)
+
      var layer1 = new PLayer(frogTest);
      layer1.mode(RING)
      layer1.set_boundary( 0, 1000 )
 
-      var layer2 = new PLayer(flowers);
-      layer2.mode(RING)
 
-     var layer3 = new PLayer(lilypad);
-     layer3.mode(RING)
+     var layer2 = new PLayer(lilypad);
+     layer2.mode(RING)
+
+
+     var layer3 = new PLayer(flowers);
+      layer3.mode(RING)
+
+    
 
   
     
@@ -54,9 +67,9 @@ function frogTest( x, y, animation, pScope) {
 
 
 function flowers( x, y, animation, pScope) {
-  scale(.03)
+  scale(.029)
   if(animation.frame == 0){
-    pScope.draw_image("flower",-500,-1000);
+    pScope.draw_image("flower",-1800,-2500);
   }
 
 }
@@ -69,7 +82,7 @@ function flowers( x, y, animation, pScope) {
 function lilypad( x, y, animation, pScope) {
 
 
-  scale(1.8)
+  scale(1)
    strokeWeight(5);
    stroke(6, 46, 0) //dark green for edge of lily pad
    fill(10,77,1) //green
@@ -107,50 +120,40 @@ function lilypad( x, y, animation, pScope) {
 
 
 
+function reeds(x, y, animation, pScope) {
+scale(.05)
+
+  if(animation.frame == 0){
+    push()
+    rotate(180)
+    pScope.draw_image("reed_1", -3000, -5000);
+    pop()
+
+    push()
+    rotate(350)
+    pScope.draw_image("reed_1", -7000, -9000);
+    pop()
+
+    pScope.draw_image("reed_1", -1000, -15000);
+
+    push()
+    rotate(290)
+    pScope.draw_image("reed_2", -1000, -5000);
+    pop()
+
+  }
+
+  
+  
+}
 
 
 
-
-
-
-
-// function reeds(x, y, animation, pScopeams) {
-
-//   fill(10,77,1) 
-
-//   // beginShape()      //smallreed
-//   // curveVertex(470, 470);
-//   // curveVertex(480, 480);
-//   // curveVertex(400, 410);
-//   // curveVertex(410, 410);
-//   // endShape(CLOSE);
-
-
-// // beginShape()      //tallreed
-// //   curveVertex(570, 540);
-// //   curveVertex(580, 550);
-// //   curveVertex(400, 380);
-// //   curveVertex(410, 380);
-// //   endShape(CLOSE);
-
-//   beginShape()      //mainreed shaft
-//   curveVertex(570, 510);
-//   curveVertex(580, 520);
-//   curveVertex(400, 400);
-//   curveVertex(405, 400);
-//   endShape(CLOSE);
-
-//   fill(119,77,32)
-
-//   beginShape()      //mainreed fluffy part
-//   curveVertex(530, 580);
-//   curveVertex(540, 540);
-//   curveVertex(510, 510);
-//   curveVertex(520, 520);
-//   endShape(CLOSE);
-
-
-//}
+function water(x, y, animation, pScope) {
+  pScope.fill_background(27,107,95);
+  
+  
+}
 
 
 

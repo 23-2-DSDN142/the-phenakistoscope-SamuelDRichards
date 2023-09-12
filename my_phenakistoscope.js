@@ -1,5 +1,7 @@
 const SLICE_COUNT = 14;
 
+
+
 function setup_pScope(pScope){
   //pScope.output_mode(ANIMATED_DISK);
   pScope.output_mode(STATIC_DISK);
@@ -13,6 +15,14 @@ function setup_pScope(pScope){
   pScope.load_image("flower" , "png");
   pScope.load_image("reed_1" , "png");
   pScope.load_image("reed_2" , "png");
+  pScope.load_image("ripple_0" , "png");
+  pScope.load_image("ripple_1" , "png")
+  pScope.load_image("ripple_2" , "png");
+  pScope.load_image("ripple_3" , "png");
+  pScope.load_image("ripple_4" , "png");
+  pScope.load_image("ripple_5" , "png");
+  pScope.load_image("ripple_6" , "png");
+
   angleMode(DEGREES);
 }
 
@@ -39,8 +49,15 @@ function setup_layers(pScope){
     //  layer5.mode(RING)
     //  layer5.set_boundary( 0, 230 )
 
-     var layer4 = new PLayer(reeds);    //reeds
-     layer4.mode(RING)
+  
+
+     var layer5 = new PLayer(reeds) 
+     layer5.mode(RING)
+
+
+      var layer6 = new PLayer(ripples);   
+      layer6.mode(RING)
+
 
      var layer1 = new PLayer(frogTest);   //the frog and fish
      layer1.mode(RING)
@@ -63,11 +80,24 @@ function setup_layers(pScope){
 
 
 
+ function ripples( x, y, animation, pScope, r) {   
+  scale(.1)
+  if(animation.frame == 0){
+  pScope.draw_image("ripple_0", -500, -3600)
+
+  }
+
+}
+
+
+
+
 function frogTest( x, y, animation, pScope) {   //frog and fish
   scale(.1558)
   pScope.draw_image_from_sequence("frogTest", 0, -4000, animation.frame)
   
 }
+
 
 
 
@@ -186,6 +216,9 @@ function water2(x, y, animation, pScope) {
 
   
 }
+
+
+
 
 
 

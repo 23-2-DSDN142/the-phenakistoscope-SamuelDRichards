@@ -3,9 +3,9 @@ const SLICE_COUNT = 14;
 
 
 function setup_pScope(pScope){
-  //pScope.output_mode(ANIMATED_DISK);
-  pScope.output_mode(STATIC_DISK);
-  //pScope.output_mode(STATIC_FRAME)
+  pScope.output_mode(ANIMATED_DISK);
+  //pScope.output_mode(STATIC_DISK);
+  //pScope.output_mode(OUTPUT_PRINT(A3))
   //pScope.output_mode(OUTPUT_GIF(1000))
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(false);
@@ -15,23 +15,10 @@ function setup_pScope(pScope){
   pScope.load_image("flower" , "png");
   pScope.load_image("reed_1" , "png");
   pScope.load_image("reed_2" , "png");
-  pScope.load_image("ripple_0" , "png");
-  pScope.load_image("ripple_1" , "png")
-  pScope.load_image("ripple_2" , "png");
-  pScope.load_image("ripple_3" , "png");
-  pScope.load_image("ripple_4" , "png");
-  pScope.load_image("ripple_5" , "png");
-  pScope.load_image("ripple_6" , "png");
 
   angleMode(DEGREES);
 }
 
-
-//ideas: add ripple where the frog is jumping, add some more depth to the pond, add something more interesting in the background, maybe like a grove pattern 
-
-//background(119,77,32) brown
-//background(179,85,133) pink
-//background(27,107,95) blue
 
 
 function setup_layers(pScope){
@@ -45,18 +32,11 @@ function setup_layers(pScope){
      layer4.mode(RING)
      layer4.set_boundary( 0, 370 )
 
-    //  var layer5 = new PLayer(water2);  //pond darker
-    //  layer5.mode(RING)
-    //  layer5.set_boundary( 0, 230 )
-
   
 
      var layer5 = new PLayer(reeds) 
      layer5.mode(RING)
 
-
-      var layer6 = new PLayer(ripples);   
-      layer6.mode(RING)
 
 
      var layer1 = new PLayer(frogTest);   //the frog and fish
@@ -80,14 +60,6 @@ function setup_layers(pScope){
 
 
 
- function ripples( x, y, animation, pScope, r) {   
-  scale(.1)
-  if(animation.frame == 0){
-  pScope.draw_image("ripple_0", -500, -3600)
-
-  }
-
-}
 
 
 
@@ -164,13 +136,6 @@ scale(.05)
     pScope.draw_image("reed_1", -3000, -5000);
     pop()
 
-    // push()
-    // rotate(350)
-    // pScope.draw_image("reed_1", -7000, -9000);
-    // pop()
-
-    // pScope.draw_image("reed_1", -1000, -15000);
-
     push()
     rotate(290)
     pScope.draw_image("reed_2", -500, -7500);
@@ -180,11 +145,6 @@ scale(.05)
     rotate(220)
     pScope.draw_image("reed_2", -100, -8000);
     pop()
-
-    // push()
-    // rotate(50)
-    // pScope.draw_image("reed_2", -9000, -15000);
-    // pop()
 
 
     push()
@@ -208,12 +168,6 @@ scale(.05)
 function water(x, y, animation, pScope) {
   pScope.fill_background(27,107,95); //blue for the pond
   
-  
-}
-
-function water2(x, y, animation, pScope) {
-  pScope.fill_background(11, 64, 56);
-
   
 }
 
